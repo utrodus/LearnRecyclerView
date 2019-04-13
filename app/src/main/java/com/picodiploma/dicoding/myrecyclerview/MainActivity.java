@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         showRecyclerList();
     }
 
-    private void showRecyclerList(){
+    private void showRecyclerList() {
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
         ListPresidentAdapter listPresidentAdapter = new ListPresidentAdapter(this);
         listPresidentAdapter.setListPresident(list);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void showRecyclerGrid(){
+    private void showRecyclerGrid() {
         rvCategory.setLayoutManager(new GridLayoutManager(this, 2));
         GridPresidentAdapter gridPresidentAdapter = new GridPresidentAdapter(this);
         gridPresidentAdapter.setListPresident(list);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void showRecyclerCardView(){
+    private void showRecyclerCardView() {
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
         CardViewPresidentAdapter cardViewPresidentAdapter = new CardViewPresidentAdapter(this);
         cardViewPresidentAdapter.setListPresident(list);
@@ -69,10 +69,11 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_list:
                 setActionBarTitle(" Mode List ");
                 showRecyclerList();
@@ -89,11 +90,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setActionBarTitle(String title){
+    private void setActionBarTitle(String title) {
         getSupportActionBar().setTitle(title);
     }
-    private void showSelectedPresident(President president){
-        Toast.makeText(this, "Kamu memilih "+president.getName(), Toast.LENGTH_SHORT).show();
+
+    private void showSelectedPresident(President president) {
+        Toast.makeText(this, "Kamu memilih " + president.getName(), Toast.LENGTH_SHORT).show();
     }
 
 }
